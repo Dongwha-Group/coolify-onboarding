@@ -16,13 +16,13 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="py-16 px-6 bg-zinc-900 dark:bg-black border-t border-zinc-800">
-      <div className="max-w-6xl mx-auto">
+    <footer className="py-16 px-4 md:px-6 lg:px-[30px] bg-zinc-900 dark:bg-black border-t border-zinc-800">
+      <div className="max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6B16ED] to-[#9333EA] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-gradient-primary-br flex items-center justify-center">
                 <svg
                   className="w-6 h-6 text-white"
                   viewBox="0 0 24 24"
@@ -131,11 +131,29 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
+        {/* Bottom - Copyright required by Dongwha */}
         <div className="pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-500 text-sm">
-            Made with Coolify. Open Source Self-hosting PaaS.
-          </p>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-primary-br flex items-center justify-center">
+              <svg
+                className="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <p className="text-zinc-500 text-sm">
+              © {new Date().getFullYear()} Coolify Starter Kit. Open Source Self-hosting PaaS.
+            </p>
+          </div>
           <div className="flex items-center gap-4">
             <a
               href="https://github.com/coollabsio/coolify"

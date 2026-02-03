@@ -68,7 +68,7 @@ export default function Checklist() {
   const allRequiredChecked = requiredCheckedCount === requiredItems.length;
 
   return (
-    <section className="py-20 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+    <section id="checklist" className="py-20 px-4 md:px-6 lg:px-[30px] bg-zinc-50 dark:bg-zinc-900/50">
       <div className="max-w-3xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
@@ -92,12 +92,12 @@ export default function Checklist() {
           </div>
           <div className="h-3 bg-zinc-200 dark:bg-zinc-700 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#6B16ED] to-[#9333EA] transition-all duration-300"
+              className="h-full bg-gradient-primary transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
           {allRequiredChecked && (
-            <div className="mt-3 flex items-center gap-2 text-green-600 dark:text-green-400">
+            <div className="mt-3 flex items-center gap-2 text-[#00694D] dark:text-[#6BB89E]">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -114,7 +114,7 @@ export default function Checklist() {
               className="bg-white dark:bg-zinc-800 rounded-2xl p-6 shadow-sm border border-zinc-200 dark:border-zinc-700"
             >
               <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#6B16ED]" />
+                <span className="w-2 h-2 rounded-full bg-primary" />
                 {category.category}
               </h3>
               <div className="space-y-3">
@@ -130,7 +130,7 @@ export default function Checklist() {
                         onChange={() => toggleItem(item.id)}
                         className="sr-only peer"
                       />
-                      <div className="w-5 h-5 border-2 border-zinc-300 dark:border-zinc-600 rounded peer-checked:border-[#6B16ED] peer-checked:bg-[#6B16ED] transition-all">
+                      <div className="w-5 h-5 border-2 border-zinc-300 dark:border-zinc-600 rounded peer-checked:border-[#00694D] peer-checked:bg-[#00694D] transition-all">
                         <svg
                           className={`w-full h-full text-white p-0.5 transition-opacity ${
                             checked[item.id] ? "opacity-100" : "opacity-0"

@@ -2,20 +2,20 @@
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-transparent dark:from-purple-900/30" />
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 md:px-6 lg:px-[30px] py-20 pt-24 overflow-hidden">
+      {/* Background gradient - Dongwha Primary */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#00694D]/10 via-transparent to-transparent dark:from-[#00694D]/20" />
 
       {/* Animated background shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#00694D]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#008C66]/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Coolify Logo */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center container-grid">
+        {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#6B16ED] to-[#9333EA] flex items-center justify-center shadow-lg shadow-purple-500/25">
+          <div className="w-20 h-20 rounded-2xl bg-gradient-primary-br flex items-center justify-center shadow-primary-lg">
             <svg
               className="w-12 h-12 text-white"
               viewBox="0 0 24 24"
@@ -50,7 +50,7 @@ export default function Hero() {
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
           Coolify{" "}
-          <span className="bg-gradient-to-r from-[#6B16ED] to-[#9333EA] bg-clip-text text-transparent">
+          <span className="bg-gradient-primary bg-clip-text text-transparent">
             자동배포
           </span>{" "}
           스타터 킷
@@ -67,7 +67,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#setup"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-[#6B16ED] to-[#9333EA] rounded-full hover:opacity-90 transition-all shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-primary rounded-full hover:opacity-90 transition-all shadow-primary hover:shadow-primary-lg hover:scale-105"
           >
             시작하기
             <svg

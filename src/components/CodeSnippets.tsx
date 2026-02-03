@@ -140,7 +140,7 @@ export default function CodeSnippets() {
   };
 
   return (
-    <section className="py-20 px-6">
+    <section id="code" className="py-20 px-4 md:px-6 lg:px-[30px]">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
@@ -215,17 +215,17 @@ export default function CodeSnippets() {
 
         {/* Tips */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
-            <svg className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="flex items-start gap-3 p-4 bg-[#00694D]/10 dark:bg-[#00694D]/20 rounded-xl border border-[#00694D]/20 dark:border-[#00694D]/30">
+            <svg className="w-5 h-5 text-[#00694D] dark:text-[#6BB89E] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
-              <p className="text-sm font-medium text-blue-900 dark:text-blue-300">Nixpacks 추천</p>
-              <p className="text-sm text-blue-700 dark:text-blue-400">Dockerfile이 없으면 Nixpacks가 자동으로 빌드 설정을 감지합니다.</p>
+              <p className="text-sm font-medium text-[#00694D] dark:text-[#6BB89E]">Nixpacks 추천</p>
+              <p className="text-sm text-[#00694D]/80 dark:text-[#6BB89E]/80">Dockerfile이 없으면 Nixpacks가 자동으로 빌드 설정을 감지합니다.</p>
             </div>
           </div>
           <div className="flex items-start gap-3 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
-            <svg className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
             <div>

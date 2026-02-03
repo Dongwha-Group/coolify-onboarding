@@ -9,7 +9,7 @@ const features = [
     ),
     title: "자동 배포",
     description: "Git Push만 하면 자동으로 빌드하고 배포합니다. Webhook 기반의 실시간 CI/CD 파이프라인으로 수동 작업이 필요 없습니다.",
-    color: "bg-yellow-500",
+    color: "bg-[#00694D]",
   },
   {
     icon: (
@@ -19,7 +19,7 @@ const features = [
     ),
     title: "Docker 기반",
     description: "모든 애플리케이션을 Docker 컨테이너로 실행합니다. Nixpacks 또는 커스텀 Dockerfile로 유연하게 빌드할 수 있습니다.",
-    color: "bg-cyan-500",
+    color: "bg-cyan-600",
   },
   {
     icon: (
@@ -29,7 +29,7 @@ const features = [
     ),
     title: "SSL 자동 발급",
     description: "Let's Encrypt를 통해 SSL 인증서를 자동으로 발급하고 갱신합니다. HTTPS 설정에 대해 걱정할 필요가 없습니다.",
-    color: "bg-green-500",
+    color: "bg-[#008C66]",
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const features = [
     ),
     title: "환경변수 관리",
     description: "웹 UI에서 환경변수를 안전하게 관리하세요. Preview와 Production 환경을 분리하여 설정할 수 있습니다.",
-    color: "bg-purple-500",
+    color: "bg-[#4A9B7F]",
   },
   {
     icon: (
@@ -50,7 +50,7 @@ const features = [
     ),
     title: "데이터베이스 지원",
     description: "PostgreSQL, MySQL, MongoDB, Redis 등 다양한 데이터베이스를 원클릭으로 배포하고 관리할 수 있습니다.",
-    color: "bg-orange-500",
+    color: "bg-orange-600",
   },
   {
     icon: (
@@ -60,14 +60,14 @@ const features = [
     ),
     title: "모니터링",
     description: "실시간 로그 확인, 리소스 사용량 모니터링, 배포 히스토리 추적이 가능합니다. 문제 발생 시 빠르게 대응하세요.",
-    color: "bg-pink-500",
+    color: "bg-[#004D38]",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="features" className="py-20 px-4 md:px-6 lg:px-[30px]">
+      <div className="max-w-[1280px] mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
@@ -79,7 +79,7 @@ export default function Features() {
         </div>
 
         {/* Feature cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-[30px]">
           {features.map((feature) => (
             <div
               key={feature.title}

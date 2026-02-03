@@ -80,7 +80,7 @@ const steps = [
 
 export default function SetupGuide() {
   return (
-    <section id="setup" className="py-20 px-6 bg-zinc-50 dark:bg-zinc-900/50">
+    <section id="setup" className="py-20 px-4 md:px-6 lg:px-[30px] bg-zinc-50 dark:bg-zinc-900/50">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -94,8 +94,8 @@ export default function SetupGuide() {
 
         {/* Steps */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#6B16ED] via-purple-400 to-purple-200 dark:to-purple-900 hidden sm:block" />
+          {/* Vertical line - Dongwha Primary */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#00694D] via-[#008C66] to-[#4A9B7F] hidden sm:block" />
 
           <div className="space-y-8">
             {steps.map((item, index) => (
@@ -103,7 +103,7 @@ export default function SetupGuide() {
                 <div className="sm:pl-20">
                   {/* Step number - positioned on the line */}
                   <div className="absolute left-0 top-0 hidden sm:flex">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6B16ED] to-[#9333EA] flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-purple-500/25">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-primary-br flex items-center justify-center text-white font-bold text-xl shadow-primary">
                       {item.step}
                     </div>
                   </div>
@@ -112,7 +112,7 @@ export default function SetupGuide() {
                   <div className="bg-white dark:bg-zinc-800 rounded-2xl p-6 shadow-sm border border-zinc-200 dark:border-zinc-700 hover:shadow-md transition-shadow">
                     {/* Mobile step number */}
                     <div className="flex items-center gap-3 mb-4 sm:hidden">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6B16ED] to-[#9333EA] flex items-center justify-center text-white font-bold">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-primary-br flex items-center justify-center text-white font-bold">
                         {item.step}
                       </div>
                       <span className="text-sm text-zinc-400">Step {item.step} of {steps.length}</span>
@@ -138,7 +138,7 @@ export default function SetupGuide() {
                       <ul className="space-y-2">
                         {item.details.map((detail, idx) => (
                           <li key={idx} className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-400">
-                            <svg className="w-5 h-5 text-[#6B16ED] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                             {detail}
@@ -155,7 +155,7 @@ export default function SetupGuide() {
 
         {/* Success message */}
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-[#00694D]/10 dark:bg-[#00694D]/20 text-[#00694D] dark:text-[#6BB89E] rounded-full">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>

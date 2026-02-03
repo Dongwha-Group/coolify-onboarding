@@ -29,7 +29,7 @@ const steps = [
     ),
     title: "Coolify",
     description: "빌드 & 배포 오케스트레이션",
-    color: "from-[#6B16ED] to-[#9333EA]",
+    color: "from-[#00694D] to-[#008C66]",
   },
   {
     icon: (
@@ -55,8 +55,8 @@ const steps = [
 
 export default function Architecture() {
   return (
-    <section className="py-20 px-6 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-6xl mx-auto">
+    <section id="architecture" className="py-20 px-4 md:px-6 lg:px-[30px] bg-zinc-50 dark:bg-zinc-900/50">
+      <div className="max-w-[1280px] mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
@@ -149,7 +149,7 @@ export default function Architecture() {
         <div className="mt-16 text-center">
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             평균 배포 시간:{" "}
-            <span className="font-semibold text-[#6B16ED]">30초 ~ 2분</span>
+            <span className="font-semibold text-primary">30초 ~ 2분</span>
             {" "}(프로젝트 크기에 따라 다름)
           </p>
         </div>

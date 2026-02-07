@@ -49,18 +49,17 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-          Coolify{" "}
           <span className="bg-gradient-primary bg-clip-text text-transparent">
-            자동배포
+            AX
           </span>{" "}
           스타터 킷
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Git Push 한 번으로 프로덕션까지.
+          업무 프로세스의 병목을 찾아 빠르게 해결합니다.
           <br className="hidden sm:block" />
-          셀프호스팅 PaaS로 완전한 배포 자동화를 경험하세요.
+          Low cost, Maximum efficiency로 AX 문화를 확산합니다.
         </p>
 
         {/* CTA Buttons */}
@@ -85,35 +84,26 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="https://github.com/coollabsio/coolify"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#techstack"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-zinc-900 dark:text-white bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-all hover:scale-105"
           >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                fillRule="evenodd"
-                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                clipRule="evenodd"
-              />
-            </svg>
-            GitHub
+            기술 스택 보기
           </a>
         </div>
 
         {/* Quick stats */}
         <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto">
           <div className="text-center">
-            <div className="text-2xl font-bold text-zinc-900 dark:text-white">무료</div>
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">오픈소스</div>
+            <div className="text-2xl font-bold text-zinc-900 dark:text-white">Low Cost</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">최소 비용</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-zinc-900 dark:text-white">1분</div>
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">배포 시간</div>
+            <div className="text-2xl font-bold text-zinc-900 dark:text-white">Max Speed</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">최대 효율</div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-zinc-900 dark:text-white">무제한</div>
-            <div className="text-sm text-zinc-500 dark:text-zinc-400">프로젝트</div>
+            <div className="text-2xl font-bold text-zinc-900 dark:text-white">Full Stack</div>
+            <div className="text-sm text-zinc-500 dark:text-zinc-400">통합 개발</div>
           </div>
         </div>
       </div>

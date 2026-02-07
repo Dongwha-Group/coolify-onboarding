@@ -5,6 +5,15 @@ import { useState } from "react";
 export default function GNB() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const menuItems = [
+    { label: "미션", href: "#mission" },
+    { label: "기술 스택", href: "#techstack" },
+    { label: "아키텍처", href: "#architecture" },
+    { label: "개발 환경", href: "#setup" },
+    { label: "코드 규칙", href: "#code" },
+    { label: "체크리스트", href: "#checklist" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
       {/* Desktop & Tablet */}
@@ -42,27 +51,21 @@ export default function GNB() {
             </svg>
           </div>
           <span className="text-base md:text-lg font-semibold text-zinc-900 dark:text-white">
-            Coolify 스타터 킷
+            AX 스타터 킷
           </span>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#architecture" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-            아키텍처
-          </a>
-          <a href="#features" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-            기능
-          </a>
-          <a href="#setup" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-            설정 가이드
-          </a>
-          <a href="#code" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-            코드
-          </a>
-          <a href="#checklist" className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors">
-            체크리스트
-          </a>
+          {menuItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary dark:hover:text-primary-light transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
         </div>
 
         {/* Desktop CTA */}
@@ -102,21 +105,16 @@ export default function GNB() {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800">
           <div className="px-4 py-4 space-y-3">
-            <a href="#architecture" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary">
-              아키텍처
-            </a>
-            <a href="#features" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary">
-              기능
-            </a>
-            <a href="#setup" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary">
-              설정 가이드
-            </a>
-            <a href="#code" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary">
-              코드
-            </a>
-            <a href="#checklist" onClick={() => setMobileMenuOpen(false)} className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary">
-              체크리스트
-            </a>
+            {menuItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-primary"
+              >
+                {item.label}
+              </a>
+            ))}
             <hr className="border-zinc-200 dark:border-zinc-700" />
             <a
               href="https://github.com/coollabsio/coolify"

@@ -4,129 +4,144 @@ import { useState } from "react";
 
 const snippets = [
   {
-    id: "dockerfile",
-    title: "Dockerfile",
-    filename: "Dockerfile",
-    language: "dockerfile",
-    code: `# Node.js 애플리케이션 예시
-FROM node:20-alpine AS base
+    id: "git",
+    title: "Git 컨벤션",
+    filename: "commit-convention.md",
+    language: "markdown",
+    code: `# Git 커밋 컨벤션
 
-# Dependencies
-FROM base AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+## 커밋 메시지 포맷
+<타입>: <제목>
 
-# Builder
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-RUN npm run build
+<본문>
 
-# Runner
-FROM base AS runner
-WORKDIR /app
-ENV NODE_ENV=production
+Related to: #Issue ID
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+## 타입 종류
+- feat: 기능 추가
+- fix: 버그 수정
+- docs: 문서 수정
+- refactor: 코드 리팩터링
+- test: 테스트 추가/수정
+- chore: 기타 변경
+- build: 빌드/종속성 변경
 
-COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+## 브랜치 명명
+- feature/<기능명>
+- fix/<버그명>
+- hotfix/<긴급수정>
 
-USER nextjs
-EXPOSE 3000
-ENV PORT=3000
-CMD ["node", "server.js"]`,
+## 예시
+feat: 사용자 인증 API 추가
+
+- JWT 기반 인증 미들웨어 구현
+- 로그인/로그아웃 엔드포인트 생성
+
+Related to: #42`,
   },
   {
-    id: "compose",
-    title: "Docker Compose",
-    filename: "docker-compose.yml",
-    language: "yaml",
-    code: `version: '3.8'
+    id: "typescript",
+    title: "TypeScript 규칙",
+    filename: ".eslintrc.json",
+    language: "json",
+    code: `// TypeScript / Next.js 코딩 규칙
 
-services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=production
-      - DATABASE_URL=\${DATABASE_URL}
-    depends_on:
-      - db
-    restart: unless-stopped
+// 1. 네이밍 컨벤션
+// - 컴포넌트: PascalCase (UserProfile.tsx)
+// - 함수/변수: camelCase (getUserData)
+// - 상수: UPPER_SNAKE_CASE (API_BASE_URL)
+// - 타입/인터페이스: PascalCase (UserResponse)
 
-  db:
-    image: postgres:16-alpine
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_USER=\${DB_USER}
-      - POSTGRES_PASSWORD=\${DB_PASSWORD}
-      - POSTGRES_DB=\${DB_NAME}
-    restart: unless-stopped
+// 2. Import 순서
+// (1) React/Next.js
+// (2) 외부 라이브러리
+// (3) 내부 컴포넌트
+// (4) 유틸/타입
+// (5) 스타일
 
-volumes:
-  postgres_data:`,
+// 3. ESLint 주요 설정
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "error"
+  }
+}`,
   },
   {
-    id: "env",
-    title: ".env 구조",
-    filename: ".env.example",
-    language: "env",
-    code: `# 애플리케이션 설정
-NODE_ENV=production
-PORT=3000
-
-# 데이터베이스
-DATABASE_URL=postgresql://user:password@db:5432/myapp
-DB_USER=myuser
-DB_PASSWORD=mysecretpassword
-DB_NAME=myapp
-
-# API 키 (Coolify 환경변수로 관리 권장)
-API_SECRET_KEY=your-secret-key
-JWT_SECRET=your-jwt-secret
-
-# 외부 서비스
-REDIS_URL=redis://redis:6379
-S3_BUCKET=my-bucket
-S3_REGION=ap-northeast-2`,
-  },
-  {
-    id: "nixpacks",
-    title: "nixpacks.toml",
-    filename: "nixpacks.toml",
+    id: "python",
+    title: "Python 규칙",
+    filename: "pyproject.toml",
     language: "toml",
-    code: `# Nixpacks 빌드 설정 (선택사항)
-# 대부분의 경우 자동 감지로 충분합니다
+    code: `# Python / FastAPI 코딩 규칙
 
-[phases.setup]
-nixPkgs = ["nodejs_20", "npm"]
+# 1. 포매터: Black (line-length: 88)
+# 2. Import 정렬: isort
+# 3. 린터: ruff
 
-[phases.install]
-cmds = ["npm ci"]
+[tool.black]
+line-length = 88
+target-version = ["py311"]
 
-[phases.build]
-cmds = ["npm run build"]
+[tool.isort]
+profile = "black"
 
-[start]
-cmd = "npm start"
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
 
-[variables]
-NODE_ENV = "production"
-PORT = "3000"`,
+# FastAPI 구조 컨벤션
+# app/
+# ├── main.py          # FastAPI 앱 진입점
+# ├── routers/         # API 라우터 모듈
+# │   ├── users.py
+# │   └── items.py
+# ├── models/          # Pydantic 모델
+# ├── services/        # 비즈니스 로직
+# ├── core/            # 설정, 보안
+# └── dependencies.py  # 의존성 주입`,
+  },
+  {
+    id: "workflow",
+    title: "워크플로우",
+    filename: "workflow.md",
+    language: "markdown",
+    code: `# 개발 워크플로우
+
+## 1. 로컬 개발
+- main 브랜치에서 feature 브랜치 생성
+- 로컬에서 개발 및 테스트
+
+## 2. Feature Branch
+- git checkout -b feature/<기능명>
+- 작업 단위로 커밋 (컨벤션 준수)
+
+## 3. Pull Request
+- GitHub에서 PR 생성
+- 제목: 커밋 컨벤션과 동일
+- 리뷰어 지정 (최소 1명)
+
+## 4. Code Review
+- 리뷰어 피드백 반영
+- CI 통과 확인
+
+## 5. Merge
+- Squash and Merge 사용
+- main 브랜치로 머지
+
+## 6. Auto Deploy
+- main 머지 시 Coolify 자동 배포
+- Webhook → Docker Build → Deploy
+- 배포 상태 Coolify 대시보드 확인`,
   },
 ];
 
 export default function CodeSnippets() {
-  const [activeTab, setActiveTab] = useState("dockerfile");
+  const [activeTab, setActiveTab] = useState("git");
   const [copied, setCopied] = useState(false);
 
   const activeSnippet = snippets.find((s) => s.id === activeTab);
@@ -145,10 +160,10 @@ export default function CodeSnippets() {
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-            코드 스니펫
+            코딩 컨벤션 & 워크플로우
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            프로젝트에 바로 사용할 수 있는 설정 파일 예시
+            AX 팀의 코딩 규칙과 개발 프로세스
           </p>
         </div>
 
@@ -220,17 +235,17 @@ export default function CodeSnippets() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
-              <p className="text-sm font-medium text-[#00694D] dark:text-[#6BB89E]">Nixpacks 추천</p>
-              <p className="text-sm text-[#00694D]/80 dark:text-[#6BB89E]/80">Dockerfile이 없으면 Nixpacks가 자동으로 빌드 설정을 감지합니다.</p>
+              <p className="text-sm font-medium text-[#00694D] dark:text-[#6BB89E]">PR 필수</p>
+              <p className="text-sm text-[#00694D]/80 dark:text-[#6BB89E]/80">모든 코드 변경은 Pull Request를 통해 리뷰 후 머지합니다.</p>
             </div>
           </div>
           <div className="flex items-start gap-3 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
             <svg className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <div>
-              <p className="text-sm font-medium text-amber-900 dark:text-amber-300">보안 주의</p>
-              <p className="text-sm text-amber-700 dark:text-amber-400">.env 파일은 Git에 커밋하지 말고 Coolify 환경변수로 관리하세요.</p>
+              <p className="text-sm font-medium text-amber-900 dark:text-amber-300">자동 배포</p>
+              <p className="text-sm text-amber-700 dark:text-amber-400">main 브랜치 머지 시 Coolify가 자동으로 프로덕션 배포합니다.</p>
             </div>
           </div>
         </div>

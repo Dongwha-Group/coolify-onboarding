@@ -4,48 +4,53 @@ import { useState } from "react";
 
 const checklistItems = [
   {
-    id: "server",
-    category: "서버 설정",
+    id: "devenv",
+    category: "개발 환경",
     items: [
-      { id: "server-1", text: "Coolify 서버 연결 확인", required: true },
-      { id: "server-2", text: "Docker 설치 및 실행 확인", required: true },
-      { id: "server-3", text: "필요한 포트 개방 (80, 443)", required: true },
+      { id: "devenv-1", text: "Git 설치 및 설정", required: true },
+      { id: "devenv-2", text: "Node.js 20+ 설치", required: true },
+      { id: "devenv-3", text: "Python 3.11+ 설치", required: true },
+      { id: "devenv-4", text: "VS Code 및 확장 프로그램 설치", required: false },
     ],
   },
   {
     id: "repo",
     category: "레포지토리",
     items: [
-      { id: "repo-1", text: "GitHub/GitLab 레포지토리 연결", required: true },
-      { id: "repo-2", text: "배포 브랜치 설정 (예: main)", required: true },
-      { id: "repo-3", text: "Webhook 자동 설정 확인", required: false },
+      { id: "repo-1", text: "모노레포 클론 완료", required: true },
+      { id: "repo-2", text: "프론트엔드 의존성 설치 (npm install)", required: true },
+      { id: "repo-3", text: "백엔드 의존성 설치 (pip install)", required: true },
+      { id: "repo-4", text: "로컬 실행 확인 (localhost:3000, 8000)", required: true },
     ],
   },
   {
-    id: "build",
-    category: "빌드 설정",
+    id: "process",
+    category: "팀 프로세스",
     items: [
-      { id: "build-1", text: "Dockerfile 또는 Nixpacks 설정", required: true },
-      { id: "build-2", text: "빌드 명령어 확인", required: false },
-      { id: "build-3", text: "포트 설정 확인 (예: 3000)", required: true },
+      { id: "process-1", text: "Git 커밋 컨벤션 숙지", required: true },
+      { id: "process-2", text: "PR 프로세스 이해", required: true },
+      { id: "process-3", text: "코딩 컨벤션 확인 (TypeScript, Python)", required: false },
+      { id: "process-4", text: "배포 파이프라인 이해", required: false },
     ],
   },
   {
-    id: "env",
-    category: "환경변수",
+    id: "access",
+    category: "접근 권한",
     items: [
-      { id: "env-1", text: "필수 환경변수 설정", required: true },
-      { id: "env-2", text: "데이터베이스 연결 문자열 설정", required: false },
-      { id: "env-3", text: "API 키 및 시크릿 설정", required: false },
+      { id: "access-1", text: "GitHub 조직 및 레포 접근 권한", required: true },
+      { id: "access-2", text: "Coolify 대시보드 접근", required: false },
+      { id: "access-3", text: "AWS 콘솔 접근 (필요시)", required: false },
+      { id: "access-4", text: "커뮤니케이션 채널 가입", required: true },
     ],
   },
   {
-    id: "domain",
-    category: "도메인 & SSL",
+    id: "docs",
+    category: "문서 확인",
     items: [
-      { id: "domain-1", text: "커스텀 도메인 설정", required: false },
-      { id: "domain-2", text: "DNS 레코드 설정 (A/CNAME)", required: false },
-      { id: "domain-3", text: "SSL 인증서 발급 확인", required: false },
+      { id: "docs-1", text: "README.md 읽기", required: true },
+      { id: "docs-2", text: "팀 위키 확인", required: false },
+      { id: "docs-3", text: "Ontology 문서 확인", required: false },
+      { id: "docs-4", text: "API 문서 확인 (FastAPI /docs)", required: false },
     ],
   },
 ];
@@ -73,10 +78,10 @@ export default function Checklist() {
         {/* Section header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-            배포 전 체크리스트
+            온보딩 체크리스트
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            첫 배포 전 확인해야 할 항목들을 체크하세요
+            AX 팀 합류 후 확인해야 할 항목들을 체크하세요
           </p>
         </div>
 
@@ -101,7 +106,7 @@ export default function Checklist() {
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-sm font-medium">필수 항목 모두 완료! 배포 준비 완료</span>
+              <span className="text-sm font-medium">필수 항목 모두 완료! 온보딩 준비 완료</span>
             </div>
           )}
         </div>

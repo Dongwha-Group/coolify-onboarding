@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Coolify 자동배포 스타터 킷",
-  description: "Git Push 한 번으로 프로덕션까지. 셀프호스팅 PaaS Coolify를 사용한 자동배포 가이드.",
-  keywords: ["Coolify", "자동배포", "Docker", "CI/CD", "셀프호스팅", "PaaS"],
-  authors: [{ name: "Coolify Community" }],
+  title: "AX 스타터 킷",
+  description: "AX 팀의 개발 온보딩 허브. 기술 스택, 아키텍처, 개발 환경, 배포 파이프라인 가이드.",
+  keywords: ["AX", "온보딩", "Next.js", "FastAPI", "Palantir Ontology", "Coolify", "Monorepo"],
+  authors: [{ name: "AX Team" }],
   openGraph: {
-    title: "Coolify 자동배포 스타터 킷",
-    description: "Git Push 한 번으로 프로덕션까지. 셀프호스팅 PaaS Coolify를 사용한 자동배포 가이드.",
+    title: "AX 스타터 킷",
+    description: "AX 팀의 개발 온보딩 허브. 기술 스택, 아키텍처, 개발 환경, 배포 파이프라인 가이드.",
     type: "website",
   },
 };

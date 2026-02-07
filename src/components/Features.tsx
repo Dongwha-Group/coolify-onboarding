@@ -4,43 +4,22 @@ const features = [
   {
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    title: "자동 배포",
-    description: "Git Push만 하면 자동으로 빌드하고 배포합니다. Webhook 기반의 실시간 CI/CD 파이프라인으로 수동 작업이 필요 없습니다.",
+    title: "Next.js (App Router)",
+    description: "React 기반 풀스택 프레임워크. App Router, Server Components, API Routes를 활용한 프론트엔드 개발.",
     color: "bg-[#00694D]",
   },
   {
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Docker 기반",
-    description: "모든 애플리케이션을 Docker 컨테이너로 실행합니다. Nixpacks 또는 커스텀 Dockerfile로 유연하게 빌드할 수 있습니다.",
+    title: "FastAPI (Python)",
+    description: "고성능 Python 백엔드 프레임워크. 타입 안전한 API 개발, 자동 문서 생성, 비동기 처리 지원.",
     color: "bg-cyan-600",
-  },
-  {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
-    title: "SSL 자동 발급",
-    description: "Let's Encrypt를 통해 SSL 인증서를 자동으로 발급하고 갱신합니다. HTTPS 설정에 대해 걱정할 필요가 없습니다.",
-    color: "bg-[#008C66]",
-  },
-  {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    title: "환경변수 관리",
-    description: "웹 UI에서 환경변수를 안전하게 관리하세요. Preview와 Production 환경을 분리하여 설정할 수 있습니다.",
-    color: "bg-[#4A9B7F]",
   },
   {
     icon: (
@@ -48,33 +27,53 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
-    title: "데이터베이스 지원",
-    description: "PostgreSQL, MySQL, MongoDB, Redis 등 다양한 데이터베이스를 원클릭으로 배포하고 관리할 수 있습니다.",
+    title: "Palantir Ontology",
+    description: "데이터 모델링 및 통합 방법론. 비즈니스 객체와 관계를 체계적으로 정의하고 활용.",
+    color: "bg-[#008C66]",
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+      </svg>
+    ),
+    title: "AWS EC2 + Coolify",
+    description: "셀프호스팅 PaaS 인프라. AWS EC2 위에 Coolify를 운영하여 배포 자동화 및 서비스 관리.",
+    color: "bg-[#4A9B7F]",
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+      </svg>
+    ),
+    title: "Docker Compose",
+    description: "컨테이너 기반 배포 환경. 프론트엔드, 백엔드, DB를 하나의 구성 파일로 통합 관리.",
     color: "bg-orange-600",
   },
   {
     icon: (
       <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
       </svg>
     ),
-    title: "모니터링",
-    description: "실시간 로그 확인, 리소스 사용량 모니터링, 배포 히스토리 추적이 가능합니다. 문제 발생 시 빠르게 대응하세요.",
+    title: "Monorepo",
+    description: "프론트엔드와 백엔드를 하나의 저장소에서 통합 관리. 코드 공유와 일관된 개발 경험 제공.",
     color: "bg-[#004D38]",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-4 md:px-6 lg:px-[30px]">
+    <section id="techstack" className="py-20 px-4 md:px-6 lg:px-[30px]">
       <div className="max-w-[1280px] mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4">
-            주요 기능
+            기술 스택
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Coolify가 제공하는 강력한 기능들로 배포 워크플로우를 혁신하세요
+            AX 팀이 사용하는 핵심 기술과 도구
           </p>
         </div>
 

@@ -106,7 +106,7 @@ const steps = [
       },
       {
         label: "PowerShell (Windows)",
-        code: "curl -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboarding/main/scripts/init-claude.mjs -o init-claude.mjs; node init-claude.mjs",
+        code: "curl.exe -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboarding/main/scripts/init-claude.mjs -o init-claude.mjs; node init-claude.mjs",
       },
     ],
     icon: (

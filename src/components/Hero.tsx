@@ -65,7 +65,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#setup"
+            href="/get-started"
             className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-primary rounded-full hover:opacity-90 transition-all shadow-primary hover:shadow-primary-lg hover:scale-105"
           >
             시작하기
@@ -79,7 +79,7 @@ export default function Hero() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M19 9l-7 7-7-7"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
               />
             </svg>
           </a>

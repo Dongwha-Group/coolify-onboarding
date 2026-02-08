@@ -12,6 +12,7 @@ export default function GNB() {
     { label: "개발 환경", href: "#setup" },
     { label: "코드 규칙", href: "#code" },
     { label: "체크리스트", href: "#checklist" },
+    { label: "시작하기", href: "/get-started" },
   ];
 
   return (

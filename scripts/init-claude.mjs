@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 
-const GITHUB_OWNER = 'user';
+const GITHUB_OWNER = 'Dongwha-Group';
 const GITHUB_REPO = 'coolify-onboarding';
 const GITHUB_BRANCH = 'main';
 const GITHUB_API_BASE = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`;

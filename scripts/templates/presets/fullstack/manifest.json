@@ -1,0 +1,20 @@
+{
+  "files": [
+    { "src": "gitignore.tpl", "dest": ".gitignore" },
+    { "src": "docker-compose.yml.tpl", "dest": "docker-compose.yml" },
+    { "src": "frontend/gitignore.tpl", "dest": "frontend/.gitignore" },
+    { "src": "frontend/Dockerfile.tpl", "dest": "frontend/Dockerfile" },
+    { "src": "backend/gitignore.tpl", "dest": "backend/.gitignore" },
+    { "src": "backend/Dockerfile.tpl", "dest": "backend/Dockerfile" },
+    { "src": "backend/app/__init__.py.tpl", "dest": "backend/app/__init__.py" },
+    { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
+  ],
+  "directories": [
+    "frontend/src/app",
+    "frontend/public",
+    "backend/app/routers",
+    "backend/app/models",
+    "backend/app/schemas",
+    "backend/app/services"
+  ]
+}

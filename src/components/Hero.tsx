@@ -49,7 +49,7 @@ export default function Hero() {
 
         {/* Title */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6 tracking-tight">
-          <span className="bg-gradient-primary bg-clip-text text-transparent">
+          <span className="gradient-text">
             AX
           </span>{" "}
           스타터 킷

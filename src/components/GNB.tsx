@@ -6,12 +6,12 @@ export default function GNB() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { label: "미션", href: "#mission" },
-    { label: "기술 스택", href: "#techstack" },
-    { label: "아키텍처", href: "#architecture" },
-    { label: "개발 환경", href: "#setup" },
-    { label: "코드 규칙", href: "#code" },
-    { label: "체크리스트", href: "#checklist" },
+    { label: "미션", href: "/#mission" },
+    { label: "기술 스택", href: "/#techstack" },
+    { label: "아키텍처", href: "/#architecture" },
+    { label: "개발 환경", href: "/#setup" },
+    { label: "코드 규칙", href: "/#code" },
+    { label: "체크리스트", href: "/#checklist" },
     { label: "시작하기", href: "/get-started" },
   ];
 

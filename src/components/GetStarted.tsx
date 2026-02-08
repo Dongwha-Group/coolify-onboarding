@@ -118,12 +118,12 @@ const steps = [
   {
     step: 3,
     title: "대화형 프롬프트 응답",
-    description: "스크립트가 묻는 질문에 답하면 프로젝트에 맞는 Claude 룰이 자동 생성됩니다.",
+    description: "프로젝트 이름, 설명 입력 후 프로젝트 유형을 선택하면 맞춤 구조가 생성됩니다.",
     prompts: [
       "프로젝트 이름",
       "프로젝트 설명",
-      "기술 스택 (예: Next.js, FastAPI)",
-      "주요 명령어 (예: npm run dev)",
+      "프로젝트 유형 (Next.js / FastAPI / Fullstack / 룰만)",
+      "설치 경로",
     ],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,12 +133,122 @@ const steps = [
   },
 ];
 
-const fileTree = `your-project/
+const presetTrees: { id: string; label: string; tree: string }[] = [
+  {
+    id: "rules-only",
+    label: "룰만",
+    tree: `your-project/
 ├── CLAUDE.md
 └── .claude/
     └── rules/
         ├── design-system.md
-        └── git-commit.md`;
+        └── git-commit.md`,
+  },
+  {
+    id: "nextjs",
+    label: "Next.js",
+    tree: `your-project/
+├── CLAUDE.md
+├── .claude/
+│   └── rules/
+│       ├── design-system.md
+│       └── git-commit.md
+├── .gitignore
+├── Dockerfile
+├── public/
+│   └── .gitkeep
+└── src/
+    └── app/
+        └── .gitkeep`,
+  },
+  {
+    id: "fastapi",
+    label: "FastAPI",
+    tree: `your-project/
+├── CLAUDE.md
+├── .claude/
+│   └── rules/
+│       ├── design-system.md
+│       └── git-commit.md
+├── .gitignore
+├── Dockerfile
+└── app/
+    ├── __init__.py
+    ├── routers/
+    │   └── .gitkeep
+    ├── models/
+    │   └── .gitkeep
+    ├── schemas/
+    │   └── .gitkeep
+    └── services/
+        └── .gitkeep`,
+  },
+  {
+    id: "fullstack",
+    label: "Fullstack",
+    tree: `your-project/
+├── CLAUDE.md
+├── .claude/
+│   └── rules/
+│       ├── design-system.md
+│       └── git-commit.md
+├── .gitignore
+├── docker-compose.yml
+├── frontend/
+│   ├── .gitignore
+│   ├── Dockerfile
+│   ├── public/
+│   │   └── .gitkeep
+│   └── src/
+│       └── app/
+│           └── .gitkeep
+└── backend/
+    ├── .gitignore
+    ├── Dockerfile
+    └── app/
+        ├── __init__.py
+        ├── routers/
+        │   └── .gitkeep
+        ├── models/
+        │   └── .gitkeep
+        ├── schemas/
+        │   └── .gitkeep
+        └── services/
+            └── .gitkeep`,
+  },
+];
+
+function PresetTabs() {
+  const [active, setActive] = useState(0);
+
+  return (
+    <div>
+      <div className="flex gap-1 mb-0 flex-wrap">
+        {presetTrees.map((preset, idx) => (
+          <button
+            key={preset.id}
+            onClick={() => setActive(idx)}
+            className={`px-4 py-2 text-xs font-medium rounded-t-lg transition-colors ${
+              active === idx
+                ? "bg-zinc-900 text-white"
+                : "bg-zinc-200 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
+            }`}
+          >
+            {preset.label}
+          </button>
+        ))}
+      </div>
+      <div className="relative bg-zinc-900 rounded-xl rounded-tl-none p-4">
+        <div className="absolute top-3 right-3">
+          <CopyButton text={presetTrees[active].tree} />
+        </div>
+        <pre className="font-mono text-sm text-zinc-300 overflow-x-auto">
+          <code>{presetTrees[active].tree}</code>
+        </pre>
+      </div>
+    </div>
+  );
+}
 
 export default function GetStarted() {
   const [altOpen, setAltOpen] = useState(false);
@@ -303,11 +413,11 @@ export default function GetStarted() {
               생성 결과
             </h2>
             <p className="text-lg text-zinc-600 dark:text-zinc-400">
-              스크립트 실행 후 다음 파일들이 프로젝트에 생성됩니다
+              프리셋에 따라 다음 파일들이 프로젝트에 생성됩니다
             </p>
           </div>
 
-          <CodeBlock code={fileTree} copyable={false} />
+          <PresetTabs />
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white dark:bg-zinc-800 rounded-xl p-4 border border-zinc-200 dark:border-zinc-700">

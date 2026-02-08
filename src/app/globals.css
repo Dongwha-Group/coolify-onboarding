@@ -159,6 +159,14 @@ pre code {
   background-clip: text;
 }
 
+.gradient-text {
+  background: linear-gradient(to right, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* Dongwha Primary Color Utilities */
 .bg-primary {
   background-color: var(--primary);

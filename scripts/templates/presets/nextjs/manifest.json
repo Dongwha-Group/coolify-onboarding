@@ -1,0 +1,8 @@
+{
+  "files": [
+    { "src": "gitignore.tpl", "dest": ".gitignore" },
+    { "src": "Dockerfile.tpl", "dest": "Dockerfile" },
+    { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
+  ],
+  "directories": ["src/app", "public"]
+}

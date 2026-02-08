@@ -15,10 +15,17 @@ const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GIT
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
-const isLocal = import.meta.url?.startsWith('file://');
-
 function getScriptDir() {
   return dirname(fileURLToPath(import.meta.url));
+}
+
+function hasLocalTemplates() {
+  try {
+    const scriptDir = getScriptDir();
+    return existsSync(join(scriptDir, 'templates', 'CLAUDE.md.tpl'));
+  } catch {
+    return false;
+  }
 }
 
 function ask(rl, question, defaultValue) {
@@ -166,7 +173,7 @@ async function main() {
     // 3. Load templates
     let templateContent, rules;
 
-    if (isLocal) {
+    if (hasLocalTemplates()) {
       const scriptDir = getScriptDir();
       ({ templateContent, rules } = await loadTemplateLocal(scriptDir));
     } else {

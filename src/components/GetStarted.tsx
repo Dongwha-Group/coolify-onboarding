@@ -51,6 +51,38 @@ function CodeBlock({ code, copyable = true }: { code: string; copyable?: boolean
   );
 }
 
+function ShellTabs({ tabs }: { tabs: { label: string; code: string }[] }) {
+  const [active, setActive] = useState(0);
+
+  return (
+    <div>
+      <div className="flex gap-1 mb-0">
+        {tabs.map((tab, idx) => (
+          <button
+            key={tab.label}
+            onClick={() => setActive(idx)}
+            className={`px-4 py-2 text-xs font-medium rounded-t-lg transition-colors ${
+              active === idx
+                ? "bg-zinc-900 text-white"
+                : "bg-zinc-200 dark:bg-zinc-700 text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <div className="relative bg-zinc-900 rounded-xl rounded-tl-none p-4">
+        <div className="absolute top-3 right-3">
+          <CopyButton text={tabs[active].code} />
+        </div>
+        <pre className="font-mono text-sm text-zinc-300 overflow-x-auto">
+          <code>{tabs[active].code}</code>
+        </pre>
+      </div>
+    </div>
+  );
+}
+
 const steps = [
   {
     step: 1,
@@ -67,7 +99,16 @@ const steps = [
     step: 2,
     title: "스크립트 다운로드 & 실행",
     description: "curl로 스크립트를 다운로드한 뒤 Node.js로 바로 실행합니다. (권장)",
-    code: "curl -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboarding/main/scripts/init-claude.mjs -o init-claude.mjs && node init-claude.mjs",
+    shellTabs: [
+      {
+        label: "Bash (macOS / Linux)",
+        code: "curl -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboarding/main/scripts/init-claude.mjs -o init-claude.mjs && node init-claude.mjs",
+      },
+      {
+        label: "PowerShell (Windows)",
+        code: "curl -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboarding/main/scripts/init-claude.mjs -o init-claude.mjs; node init-claude.mjs",
+      },
+    ],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -229,6 +270,7 @@ export default function GetStarted() {
                       {/* Content */}
                       <div className="ml-0 sm:ml-16">
                         {item.code && <CodeBlock code={item.code} />}
+                        {item.shellTabs && <ShellTabs tabs={item.shellTabs} />}
                         {item.prompts && (
                           <div className="bg-zinc-50 dark:bg-zinc-900/50 rounded-xl p-4">
                             <ul className="space-y-2">

@@ -116,6 +116,8 @@ async function loadTemplateRemote() {
   return { templateContent, rules };
 }
 
+const UTF8_BOM = '\uFEFF';
+
 // ── File generation ────────────────────────────────────────────────────────────
 
 function generateRulesList(rules) {
@@ -205,7 +207,7 @@ async function main() {
     const createdFiles = [];
     for (const rule of rules) {
       const dest = join(claudeRulesDir, rule.name);
-      writeFileSync(dest, rule.content, 'utf-8');
+      writeFileSync(dest, UTF8_BOM + rule.content, 'utf-8');
       createdFiles.push(`.claude/rules/${rule.name}`);
     }
 
@@ -222,7 +224,7 @@ async function main() {
       RULES_LIST: rulesList,
     });
 
-    writeFileSync(claudeMdPath, claudeMd, 'utf-8');
+    writeFileSync(claudeMdPath, UTF8_BOM + claudeMd, 'utf-8');
     createdFiles.push('CLAUDE.md');
 
     // 5. Done

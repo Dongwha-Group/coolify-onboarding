@@ -28,21 +28,38 @@ function hasLocalTemplates() {
   }
 }
 
-function ask(rl, question, defaultValue) {
-  const prompt = defaultValue ? `${question} (${defaultValue}): ` : `${question}: `;
-  return new Promise((resolve) => {
-    rl.question(prompt, (answer) => {
-      resolve(answer.trim() || defaultValue || '');
-    });
-  });
-}
+function createPrompt(rl) {
+  const buffer = [];
+  let waiting = null;
 
-function askYN(rl, question) {
-  return new Promise((resolve) => {
-    rl.question(`${question} (y/N): `, (answer) => {
-      resolve(answer.trim().toLowerCase() === 'y');
-    });
+  rl.on('line', (line) => {
+    if (waiting) {
+      const resolve = waiting;
+      waiting = null;
+      resolve(line);
+    } else {
+      buffer.push(line);
+    }
   });
+
+  function nextLine(prompt) {
+    process.stdout.write(prompt);
+    if (buffer.length > 0) return Promise.resolve(buffer.shift());
+    return new Promise((resolve) => { waiting = resolve; });
+  }
+
+  async function ask(question, defaultValue) {
+    const prompt = defaultValue ? `${question} (${defaultValue}): ` : `${question}: `;
+    const answer = await nextLine(prompt);
+    return answer.trim() || defaultValue || '';
+  }
+
+  async function askYN(question) {
+    const answer = await nextLine(`${question} (y/N): `);
+    return answer.trim().toLowerCase() === 'y';
+  }
+
+  return { ask, askYN };
 }
 
 // ── Template loading (local vs remote) ─────────────────────────────────────────
@@ -138,18 +155,19 @@ async function main() {
     input: process.stdin,
     output: process.stdout,
   });
+  const { ask, askYN } = createPrompt(rl);
 
   try {
     // 1. Interactive prompts
     const cwd = process.cwd();
     const defaultName = basename(cwd);
 
-    const projectName = await ask(rl, '프로젝트 이름', defaultName);
-    const projectDesc = await ask(rl, '프로젝트 설명', '');
-    const techStack = await ask(rl, '기술 스택 (쉼표 구분, 예: Next.js, FastAPI, Docker)', '');
-    const devCommand = await ask(rl, '개발 서버 명령어', 'npm run dev');
-    const buildCommand = await ask(rl, '빌드 명령어', 'npm run build');
-    const installPath = await ask(rl, '설치 경로', '.');
+    const projectName = await ask('프로젝트 이름', defaultName);
+    const projectDesc = await ask('프로젝트 설명', '');
+    const techStack = await ask('기술 스택 (쉼표 구분, 예: Next.js, FastAPI, Docker)', '');
+    const devCommand = await ask('개발 서버 명령어', 'npm run dev');
+    const buildCommand = await ask('빌드 명령어', 'npm run build');
+    const installPath = await ask('설치 경로', '.');
 
     const targetDir = resolve(cwd, installPath);
 
@@ -160,7 +178,7 @@ async function main() {
 
     if (hasConflict) {
       console.log('');
-      const overwrite = await askYN(rl, '기존 CLAUDE.md 또는 .claude/ 디렉토리가 존재합니다. 덮어쓰시겠습니까?');
+      const overwrite = await askYN('기존 CLAUDE.md 또는 .claude/ 디렉토리가 존재합니다. 덮어쓰시겠습니까?');
       if (!overwrite) {
         console.log('설치를 취소합니다.');
         rl.close();

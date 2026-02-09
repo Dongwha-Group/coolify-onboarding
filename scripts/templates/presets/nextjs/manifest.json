@@ -2,7 +2,15 @@
   "files": [
     { "src": "gitignore.tpl", "dest": ".gitignore" },
     { "src": "Dockerfile.tpl", "dest": "Dockerfile" },
+    { "src": "package.json.tpl", "dest": "package.json" },
+    { "src": "tsconfig.json.tpl", "dest": "tsconfig.json" },
+    { "src": "next.config.ts.tpl", "dest": "next.config.ts" },
+    { "src": "postcss.config.mjs.tpl", "dest": "postcss.config.mjs" },
+    { "src": "eslint.config.mjs.tpl", "dest": "eslint.config.mjs" },
+    { "src": "src/app/layout.tsx.tpl", "dest": "src/app/layout.tsx" },
+    { "src": "src/app/globals.css.tpl", "dest": "src/app/globals.css" },
+    { "src": "src/app/page.tsx.tpl", "dest": "src/app/page.tsx" },
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],
-  "directories": ["src/app", "public"]
+  "directories": ["public"]
 }

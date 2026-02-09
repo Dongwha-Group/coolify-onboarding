@@ -5,6 +5,14 @@
     { "src": "frontend/gitignore.tpl", "dest": "frontend/.gitignore" },
     { "src": "frontend/Dockerfile.tpl", "dest": "frontend/Dockerfile" },
     { "src": "frontend/nginx.conf.tpl", "dest": "frontend/nginx.conf" },
+    { "src": "frontend/package.json.tpl", "dest": "frontend/package.json" },
+    { "src": "frontend/tsconfig.json.tpl", "dest": "frontend/tsconfig.json" },
+    { "src": "frontend/next.config.ts.tpl", "dest": "frontend/next.config.ts" },
+    { "src": "frontend/postcss.config.mjs.tpl", "dest": "frontend/postcss.config.mjs" },
+    { "src": "frontend/eslint.config.mjs.tpl", "dest": "frontend/eslint.config.mjs" },
+    { "src": "frontend/src/app/layout.tsx.tpl", "dest": "frontend/src/app/layout.tsx" },
+    { "src": "frontend/src/app/globals.css.tpl", "dest": "frontend/src/app/globals.css" },
+    { "src": "frontend/src/app/page.tsx.tpl", "dest": "frontend/src/app/page.tsx" },
     { "src": "backend/gitignore.tpl", "dest": "backend/.gitignore" },
     { "src": "backend/Dockerfile.tpl", "dest": "backend/Dockerfile" },
     { "src": "backend/pyproject.toml.tpl", "dest": "backend/pyproject.toml" },
@@ -13,7 +21,6 @@
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],
   "directories": [
-    "frontend/src/app",
     "frontend/public",
     "backend/app/routers",
     "backend/app/models",

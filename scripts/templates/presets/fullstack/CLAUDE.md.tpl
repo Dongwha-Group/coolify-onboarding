@@ -30,9 +30,17 @@
 │   ├── .gitignore
 │   ├── Dockerfile
 │   ├── nginx.conf
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── next.config.ts
+│   ├── postcss.config.mjs
+│   ├── eslint.config.mjs
 │   ├── public/
 │   └── src/
 │       └── app/
+│           ├── layout.tsx
+│           ├── globals.css
+│           └── page.tsx
 └── backend/
     ├── .gitignore
     ├── Dockerfile

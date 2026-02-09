@@ -155,11 +155,18 @@ const presetTrees: { id: string; label: string; tree: string }[] = [
 │       └── git-commit.md
 ├── .gitignore
 ├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+├── postcss.config.mjs
+├── eslint.config.mjs
 ├── public/
 │   └── .gitkeep
 └── src/
     └── app/
-        └── .gitkeep`,
+        ├── layout.tsx
+        ├── globals.css
+        └── page.tsx`,
   },
   {
     id: "fastapi",
@@ -197,11 +204,18 @@ const presetTrees: { id: string; label: string; tree: string }[] = [
 ├── frontend/
 │   ├── .gitignore
 │   ├── Dockerfile
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── next.config.ts
+│   ├── postcss.config.mjs
+│   ├── eslint.config.mjs
 │   ├── public/
 │   │   └── .gitkeep
 │   └── src/
 │       └── app/
-│           └── .gitkeep
+│           ├── layout.tsx
+│           ├── globals.css
+│           └── page.tsx
 └── backend/
     ├── .gitignore
     ├── Dockerfile

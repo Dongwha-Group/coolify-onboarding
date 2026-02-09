@@ -26,9 +26,17 @@
 ├── .claude/rules/
 ├── .gitignore
 ├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+├── postcss.config.mjs
+├── eslint.config.mjs
 ├── public/
 └── src/
     └── app/
+        ├── layout.tsx
+        ├── globals.css
+        └── page.tsx
 ```
 
 ## 규칙 파일

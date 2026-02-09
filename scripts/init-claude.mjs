@@ -247,7 +247,7 @@ function writePresetFiles(targetDir, presetFiles, templateValues) {
     mkdirSync(destDir, { recursive: true });
 
     let content = file.content;
-    if (file.dest.endsWith('.md') || file.dest.endsWith('.yml') || file.dest.endsWith('.yaml') || file.dest.endsWith('.toml')) {
+    if (file.dest.endsWith('.md') || file.dest.endsWith('.yml') || file.dest.endsWith('.yaml') || file.dest.endsWith('.toml') || file.dest.endsWith('.py')) {
       content = renderTemplate(content, templateValues);
     }
 

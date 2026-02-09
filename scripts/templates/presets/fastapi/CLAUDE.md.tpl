@@ -30,6 +30,7 @@
 ├── poetry.lock
 └── app/
     ├── __init__.py
+    ├── main.py
     ├── routers/
     ├── models/
     ├── schemas/

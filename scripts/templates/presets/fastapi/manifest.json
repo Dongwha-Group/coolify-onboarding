@@ -4,6 +4,7 @@
     { "src": "Dockerfile.tpl", "dest": "Dockerfile" },
     { "src": "pyproject.toml.tpl", "dest": "pyproject.toml" },
     { "src": "app/__init__.py.tpl", "dest": "app/__init__.py" },
+    { "src": "app/main.py.tpl", "dest": "app/main.py" },
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],
   "directories": ["app/routers", "app/models", "app/schemas", "app/services"]

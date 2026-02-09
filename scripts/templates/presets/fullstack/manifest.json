@@ -9,6 +9,7 @@
     { "src": "backend/Dockerfile.tpl", "dest": "backend/Dockerfile" },
     { "src": "backend/pyproject.toml.tpl", "dest": "backend/pyproject.toml" },
     { "src": "backend/app/__init__.py.tpl", "dest": "backend/app/__init__.py" },
+    { "src": "backend/app/main.py.tpl", "dest": "backend/app/main.py" },
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],
   "directories": [

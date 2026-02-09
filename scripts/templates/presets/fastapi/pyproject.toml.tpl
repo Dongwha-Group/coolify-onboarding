@@ -3,6 +3,7 @@ name = "{{PROJECT_NAME}}"
 version = "0.1.0"
 description = "{{PROJECT_DESCRIPTION}}"
 authors = []
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -13,10 +14,6 @@ pydantic = "^2.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0"
 ruff = "^0.9.0"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 line-length = 88

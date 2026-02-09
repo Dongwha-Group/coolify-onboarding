@@ -251,7 +251,8 @@ function writePresetFiles(targetDir, presetFiles, templateValues) {
       content = renderTemplate(content, templateValues);
     }
 
-    writeFileSync(destPath, UTF8_BOM + content, 'utf-8');
+    const prefix = file.dest.endsWith('.md') ? UTF8_BOM : '';
+    writeFileSync(destPath, prefix + content, 'utf-8');
     createdFiles.push(file.dest);
   }
 

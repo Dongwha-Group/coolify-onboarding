@@ -160,7 +160,7 @@ export default function SetupGuide() {
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="font-medium">프론트엔드 localhost:3000, 백엔드 localhost:8000에서 확인하세요</span>
+            <span className="font-medium">localhost:3000에서 확인하세요 (API: /api/* 경로로 프록시)</span>
           </div>
         </div>
       </div>

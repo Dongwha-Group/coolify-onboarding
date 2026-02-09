@@ -4,6 +4,7 @@
     { "src": "docker-compose.yml.tpl", "dest": "docker-compose.yml" },
     { "src": "frontend/gitignore.tpl", "dest": "frontend/.gitignore" },
     { "src": "frontend/Dockerfile.tpl", "dest": "frontend/Dockerfile" },
+    { "src": "frontend/nginx.conf.tpl", "dest": "frontend/nginx.conf" },
     { "src": "backend/gitignore.tpl", "dest": "backend/.gitignore" },
     { "src": "backend/Dockerfile.tpl", "dest": "backend/Dockerfile" },
     { "src": "backend/app/__init__.py.tpl", "dest": "backend/app/__init__.py" },

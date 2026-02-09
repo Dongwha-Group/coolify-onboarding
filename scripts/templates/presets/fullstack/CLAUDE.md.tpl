@@ -29,6 +29,7 @@
 ├── frontend/
 │   ├── .gitignore
 │   ├── Dockerfile
+│   ├── nginx.conf
 │   ├── public/
 │   └── src/
 │       └── app/

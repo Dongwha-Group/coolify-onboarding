@@ -20,7 +20,7 @@ const checklistItems = [
       { id: "repo-1", text: "모노레포 클론 완료", required: true },
       { id: "repo-2", text: "프론트엔드 의존성 설치 (npm install)", required: true },
       { id: "repo-3", text: "백엔드 의존성 설치 (pip install)", required: true },
-      { id: "repo-4", text: "로컬 실행 확인 (localhost:3000, 8000)", required: true },
+      { id: "repo-4", text: "로컬 실행 확인 (localhost:3000, API: /api/*)", required: true },
     ],
   },
   {

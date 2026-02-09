@@ -2,15 +2,13 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
-    environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
 
   backend:
     build: ./backend
-    ports:
-      - "8000:8000"
+    expose:
+      - "8000"
     environment:
       - ENV=development

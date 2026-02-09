@@ -19,6 +19,7 @@ const directoryTree = `ax-project/
 │   │   ├── app/                 # Next.js 페이지
 │   │   ├── components/          # React 컴포넌트
 │   │   └── lib/                 # API 클라이언트, 유틸
+│   ├── nginx.conf               # Nginx 리버스 프록시 설정
 │   ├── Dockerfile
 │   └── package.json
 ├── docker-compose.yml
@@ -34,7 +35,7 @@ export default function ProjectStructure() {
             프로젝트 구조
           </h2>
           <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-            Monorepo 기반의 프론트엔드/백엔드 통합 프로젝트
+            Monorepo 기반 단일 도메인 프로젝트
           </p>
         </div>
 
@@ -73,13 +74,13 @@ export default function ProjectStructure() {
               <p className="text-sm text-[#00694D]/80 dark:text-[#6BB89E]/80">코드 공유, 일관된 린트/포맷 설정, 단일 PR로 프론트/백엔드 동시 변경 가능.</p>
             </div>
           </div>
-          <div className="flex items-start gap-3 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
-            <svg className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          <div className="flex items-start gap-3 p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800">
+            <svg className="w-5 h-5 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
-              <p className="text-sm font-medium text-amber-900 dark:text-amber-300">도구 선정 중</p>
-              <p className="text-sm text-amber-700 dark:text-amber-400">Turborepo, Nx 등 빌드 도구는 추후 확정 예정입니다.</p>
+              <p className="text-sm font-medium text-cyan-900 dark:text-cyan-300">단일 도메인 구조</p>
+              <p className="text-sm text-cyan-700 dark:text-cyan-400">frontend의 nginx가 /api/* 요청을 백엔드로 리버스 프록시하여 하나의 도메인으로 서비스합니다.</p>
             </div>
           </div>
         </div>

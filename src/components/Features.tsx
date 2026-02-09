@@ -48,7 +48,7 @@ const features = [
       </svg>
     ),
     title: "Docker Compose",
-    description: "컨테이너 기반 배포 환경. 프론트엔드, 백엔드, DB를 하나의 구성 파일로 통합 관리.",
+    description: "컨테이너 기반 배포 환경. Nginx 프록시로 단일 도메인 제공, 프론트엔드/백엔드/DB 통합 관리.",
     color: "bg-orange-600",
   },
   {
@@ -58,7 +58,7 @@ const features = [
       </svg>
     ),
     title: "Monorepo",
-    description: "프론트엔드와 백엔드를 하나의 저장소에서 통합 관리. 코드 공유와 일관된 개발 경험 제공.",
+    description: "프론트엔드와 백엔드를 하나의 저장소에서 통합 관리. 단일 도메인 구조로 일관된 개발 경험 제공.",
     color: "bg-[#004D38]",
   },
 ];

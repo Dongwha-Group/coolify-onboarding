@@ -18,7 +18,7 @@ const steps = [
       </svg>
     ),
     title: "Backend",
-    description: "FastAPI Python",
+    description: "FastAPI (Nginx Proxy)",
     color: "from-cyan-500 to-blue-500",
   },
   {

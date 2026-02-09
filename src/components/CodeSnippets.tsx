@@ -77,7 +77,8 @@ Related to: #42`,
     title: "Python 규칙",
     filename: "pyproject.toml",
     language: "toml",
-    code: `# Python / FastAPI 코딩 규칙
+    code: `# 의존성 관리: Poetry (poetry install / poetry add <패키지>)
+# Python / FastAPI 코딩 규칙
 
 # 1. 포매터: Black (line-length: 88)
 # 2. Import 정렬: isort

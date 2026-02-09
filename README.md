@@ -93,8 +93,8 @@ curl.exe -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboardin
 | 프리셋 | 설명 | 생성 파일 |
 |--------|------|-----------|
 | **nextjs** | Next.js 단독 프로젝트 | `CLAUDE.md`, `Dockerfile`, `.gitignore` |
-| **fastapi** | FastAPI 단독 프로젝트 | `CLAUDE.md`, `Dockerfile`, `app/__init__.py`, `.gitignore` |
-| **fullstack** | Next.js + FastAPI 풀스택 (Nginx 프록시 단일 도메인) | `CLAUDE.md`, `docker-compose.yml`, `frontend/` (nginx.conf 포함), `backend/`, `.gitignore` |
+| **fastapi** | FastAPI 단독 프로젝트 (Poetry) | `CLAUDE.md`, `Dockerfile`, `pyproject.toml`, `app/__init__.py`, `.gitignore` |
+| **fullstack** | Next.js + FastAPI 풀스택 (Nginx 프록시 단일 도메인, Poetry) | `CLAUDE.md`, `docker-compose.yml`, `frontend/` (nginx.conf 포함), `backend/` (pyproject.toml 포함), `.gitignore` |
 
 ### 공통 생성 파일
 

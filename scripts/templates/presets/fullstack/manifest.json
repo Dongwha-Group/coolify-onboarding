@@ -7,6 +7,7 @@
     { "src": "frontend/nginx.conf.tpl", "dest": "frontend/nginx.conf" },
     { "src": "backend/gitignore.tpl", "dest": "backend/.gitignore" },
     { "src": "backend/Dockerfile.tpl", "dest": "backend/Dockerfile" },
+    { "src": "backend/pyproject.toml.tpl", "dest": "backend/pyproject.toml" },
     { "src": "backend/app/__init__.py.tpl", "dest": "backend/app/__init__.py" },
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],

@@ -2,6 +2,7 @@
   "files": [
     { "src": "gitignore.tpl", "dest": ".gitignore" },
     { "src": "Dockerfile.tpl", "dest": "Dockerfile" },
+    { "src": "pyproject.toml.tpl", "dest": "pyproject.toml" },
     { "src": "app/__init__.py.tpl", "dest": "app/__init__.py" },
     { "src": "CLAUDE.md.tpl", "dest": "CLAUDE.md" }
   ],

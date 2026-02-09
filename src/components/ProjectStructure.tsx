@@ -13,7 +13,8 @@ const directoryTree = `ax-project/
 │   │   └── middleware/          # 미들웨어
 │   ├── alembic/                 # DB 마이그레이션
 │   ├── Dockerfile
-│   └── requirements.txt
+│   ├── pyproject.toml
+│   └── poetry.lock
 ├── frontend/
 │   ├── src/
 │   │   ├── app/                 # Next.js 페이지

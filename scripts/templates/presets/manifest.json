@@ -10,14 +10,14 @@
     {
       "id": "fastapi",
       "label": "FastAPI 단독 (Backend)",
-      "techStack": "FastAPI, Python, Pydantic",
-      "devCommand": "uvicorn app.main:app --reload",
+      "techStack": "FastAPI, Python, Poetry, Pydantic",
+      "devCommand": "poetry run uvicorn app.main:app --reload",
       "buildCommand": "docker build -t api ."
     },
     {
       "id": "fullstack",
       "label": "Next.js + FastAPI 모노레포",
-      "techStack": "Next.js, FastAPI, Docker Compose",
+      "techStack": "Next.js, FastAPI, Poetry, Docker Compose",
       "devCommand": "docker compose up --build",
       "buildCommand": "docker compose build"
     }

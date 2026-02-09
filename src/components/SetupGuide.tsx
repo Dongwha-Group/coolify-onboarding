@@ -37,8 +37,8 @@ const steps = [
     description: "백엔드 개발을 위한 Python 가상환경을 구성합니다.",
     details: [
       "Python 3.11+ 설치 (python --version)",
-      "cd apps/api && python -m venv venv && pip install -r requirements.txt",
-      "uvicorn main:app --reload (localhost:8000 확인)",
+      "cd apps/api && pip install poetry && poetry install",
+      "poetry run uvicorn main:app --reload (localhost:8000 확인)",
     ],
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

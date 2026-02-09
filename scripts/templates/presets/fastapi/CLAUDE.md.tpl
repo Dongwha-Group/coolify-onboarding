@@ -26,6 +26,8 @@
 ├── .claude/rules/
 ├── .gitignore
 ├── Dockerfile
+├── pyproject.toml
+├── poetry.lock
 └── app/
     ├── __init__.py
     ├── routers/

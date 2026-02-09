@@ -4,9 +4,9 @@ AX 팀의 개발 온보딩 허브. 기술 스택, 아키텍처, 개발 환경, �
 
 ## 기술 스택
 
-- **Framework**: Next.js 15 (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS 4
 - **Font**: Pretendard (동화 디자인 시스템)
 - **Package Manager**: npm
 
@@ -36,27 +36,40 @@ npm run lint
 ```
 src/
 ├── app/
-│   ├── layout.tsx          # 루트 레이아웃
-│   ├── page.tsx            # 메인 페이지
+│   ├── layout.tsx              # 루트 레이아웃
+│   ├── page.tsx                # 메인 페이지
+│   ├── globals.css             # 글로벌 스타일
 │   └── get-started/
-│       └── page.tsx        # Get Started 페이지
+│       └── page.tsx            # Get Started 페이지
 ├── components/
-│   ├── GNB.tsx             # 글로벌 내비게이션 바
-│   ├── Hero.tsx            # 히어로 섹션
-│   ├── GetStarted.tsx      # Claude 룰 설치 가이드
-│   ├── SetupGuide.tsx      # 개발 환경 설정 가이드
-│   ├── Footer.tsx          # 푸터
-│   └── ...
+│   ├── GNB.tsx                 # 글로벌 내비게이션 바
+│   ├── Hero.tsx                # 히어로 섹션
+│   ├── Features.tsx            # 주요 기능 소개
+│   ├── Architecture.tsx        # 아키텍처 설명
+│   ├── SetupGuide.tsx          # 개발 환경 설정 가이드
+│   ├── GetStarted.tsx          # Claude 룰 설치 가이드
+│   ├── DeployPipeline.tsx      # 배포 파이프라인
+│   ├── ProjectStructure.tsx    # 프로젝트 구조 안내
+│   ├── Mission.tsx             # 미션 섹션
+│   ├── Checklist.tsx           # 체크리스트
+│   ├── CodeSnippets.tsx        # 코드 스니펫
+│   └── Footer.tsx              # 푸터
 scripts/
-├── init-claude.mjs         # Claude 룰 스캐폴드 CLI
+├── init-claude.mjs             # Claude 룰 스캐폴드 CLI
 └── templates/
-    ├── CLAUDE.md.tpl       # CLAUDE.md 템플릿
-    └── rules/              # 규칙 파일 템플릿
+    ├── CLAUDE.md.tpl           # CLAUDE.md 템플릿
+    ├── rules/                  # 공통 규칙 파일 템플릿
+    │   ├── design-system.md
+    │   └── git-commit.md
+    └── presets/                # 프로젝트 프리셋
+        ├── nextjs/             # Next.js 프리셋
+        ├── fastapi/            # FastAPI 프리셋
+        └── fullstack/          # Fullstack(Next.js + FastAPI) 프리셋
 ```
 
 ## Claude 룰 스캐폴드
 
-프로젝트에 AX 팀의 Claude 룰(`CLAUDE.md`, `.claude/rules/`)을 설치하는 CLI 스크립트를 제공합니다.
+프로젝트에 AX 팀의 Claude 룰(`CLAUDE.md`, `.claude/rules/`)과 프리셋 기반 프로젝트 구조를 설치하는 CLI 스크립트를 제공합니다.
 
 ### Bash (macOS / Linux)
 
@@ -75,7 +88,15 @@ curl.exe -fsSL https://raw.githubusercontent.com/Dongwha-Group/coolify-onboardin
 - Node.js 18+
 - curl (Windows 10+, macOS, Linux 기본 내장)
 
-### 생성되는 파일
+### 프리셋 종류
+
+| 프리셋 | 설명 | 생성 파일 |
+|--------|------|-----------|
+| **nextjs** | Next.js 단독 프로젝트 | `CLAUDE.md`, `Dockerfile`, `.gitignore` |
+| **fastapi** | FastAPI 단독 프로젝트 | `CLAUDE.md`, `Dockerfile`, `app/__init__.py`, `.gitignore` |
+| **fullstack** | Next.js + FastAPI 풀스택 | `CLAUDE.md`, `docker-compose.yml`, `frontend/`, `backend/`, `.gitignore` |
+
+### 공통 생성 파일
 
 ```
 your-project/
